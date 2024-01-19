@@ -1,0 +1,314 @@
+.layOut {
+    display: grid;
+    grid-template-columns: 2fr 5fr;
+    gap: 1rem;
+    background-color: var(--primary-dark);
+    padding: 2rem;
+    height: 100%;
+}
+
+.chatBox {
+    background-color: var(--secondary-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.chatBoxHeader {
+    display: flex;
+    width: 100%;
+    border-bottom: 2px solid var(--primary-dark);
+    color: var(--primary-white);
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.chatBoxHeader button {
+    margin-left: auto;
+    background-color: transparent;
+    border: none;
+}
+
+strong {
+    color:yellow;
+}
+
+.messageList {
+    margin-top: 1rem;
+    min-height: 40vh;
+    width: 100%;
+    max-height: 70vh;
+    overflow-y: scroll;
+    display: flex;
+    padding: 2rem;
+    flex-direction: column;
+}
+
+.messageText {
+    background-color: var(--primary-gray);
+    margin-bottom: 1rem;
+    padding: 2rem 3rem;
+    border-radius: 1.25rem;
+    position: relative;
+    word-wrap: break-word;
+    min-width: 15rem;
+    max-width: 40rem;
+    color: var(--primary-white);
+}
+
+.messageText em {
+    position: absolute;
+    right: 0.3rem;
+    bottom: -1rem;
+    font-size: 0.7rem;
+}
+
+.messageInputContainer {
+    position: relative;
+    width: 80%;
+    top: 5%;
+}
+
+.messageInput {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    height: 4.5rem;
+    padding: 1.5rem 2rem 1.5rem 2.4375rem;
+    background: transparent;
+    width: 100%;
+    border-radius: 1.25rem;
+    border: 2px solid var(--primary-gray);
+    color: var(--primary-white);
+    outline: none;
+}
+
+.messageInputSendBTN {
+    position: absolute;
+    right: 0.5rem;
+    top: 1.4rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.messageInputSendBTN:active {
+    opacity: 0.9;
+}
+
+.sender {
+    align-self: flex-start;
+    
+    margin-right: 50%;
+
+}
+
+.reciver {
+    align-self: flex-end;
+    margin-left: 50%;
+}
+
+.assideControlWrapper {
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    background-color: var(--secondary-dark);
+    overflow-y: scroll;
+    min-height: 90vh;
+}
+
+.logoContainer {
+    color: var(--primary-white);
+}
+
+.settingsControl {
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+}
+
+.settingsControl button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.settingsControl p {
+    color: var(--primary-white);
+}
+
+.brakeLine {
+    color: var(--primary-dark);
+}
+
+.inputGroup {
+    position: relative;
+    gap: 1rem;
+}
+
+.inputGroup button {
+    background-color: transparent;
+    color: var(--primary-white);
+    border: none;
+    position: absolute;
+    right: -2rem;
+    top: 0.8rem;
+}
+.noDataToShowMSG{
+    color: var(--primary-white);
+
+}
+.userBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 1rem;
+}
+
+
+.userList {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding: 1rem;
+    max-height: 20vh;
+    overflow-y: scroll;
+    font-size: 0.875rem;
+}
+
+.userList h2 {
+    color: var(--primary-white);
+}
+
+.userList em {
+    color: rgba(255, 255, 255, 0.50);
+}
+
+.userBox {
+    margin: 1rem 0;
+}
+
+.userBTN {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--primary-white);
+    margin-left: auto;
+}
+
+.btnCTR {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: var(--primary-white);
+}
+
+.keyInput {
+    border-radius: 3.75rem;
+    background-color: gainsboro;
+    border: none;
+    padding: 0.25rem;
+    color: black;
+    margin-bottom: 1rem;
+    outline: none;
+}
+
+.buttonGroup {
+    display: flex;
+    gap: 3rem;
+
+}
+
+.btnCTR input {
+    margin-top: 0.6rem;
+    display: block;
+}
+
+.addFriend {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.addFriend form {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.addFriend button {
+    margin-top: 0.4rem;
+}
+
+.transparentBTN {
+    border: none;
+    color: var(--primary-white);
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.transparentBTN:active, .transparentBTN:hover {
+    opacity: 0.9;
+}
+
+.contactBTN {
+    padding: 0.5rem 1rem 0.5rem 0.9375rem;
+    border-radius: 1.25rem;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.10);
+    color: var(--primary-white);
+    background: var(--primary-gray);
+    width: 7.4375rem;
+    height: 2.0625rem;
+    border: none;
+    cursor: pointer;
+}
+
+.searchFieldContact {
+    border-radius: 1.25rem;
+    border: 2px solid var(--primary-gray);
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.50);
+    padding: 0.6rem 1rem;
+    outline: none;
+    width: 100%;
+}
+
+.searchContainer {
+    width: 60%;
+    position: relative;
+}
+
+.searchBTN {
+    position: absolute;
+    right: 5%;
+    top: 30%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.searchBTN:active {
+    opacity: 0.8;
+}
+
+.refreshBTN {
+    background-color: transparent;
+    border: none;
+    transition: 1s;
+}
+
+.refreshBTN.active {
+    rotate: 360deg;
+}
+
+.logOutBTN {
+    background-color: transparent;
+    color: var(--primary-white);
+    border: none;
+    cursor: pointer;
+    line-height: 1.1rem;
+}

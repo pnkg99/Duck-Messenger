@@ -1,0 +1,97 @@
+.logoContainer {
+    color: var(--primary-white);
+}
+
+.loginContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    margin-top: 2rem;
+}
+
+.loginFormContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.loginFormContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3.5rem;
+    border-radius: 2.5rem;
+    background: #FF2D55;
+    padding: 4rem;
+}
+
+.loginFormContent input[type=text] {
+    background-color: #0084FF;
+    color: black;
+    border: none;
+    padding: 1rem;
+    border-radius: 9.375rem;
+    max-width: 15rem;
+    outline-style: none;
+    font-size: 1rem;
+}
+
+.formBTN {
+    padding: 0.5rem 2.5rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 1rem;
+    background-color: white;
+    font-size: 1rem;
+}
+
+.formBTN.active {
+    background-color: green;
+}
+
+.registerModalContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-dark);
+    color: var(--primary-white);
+    min-height: 50vh;
+    padding: 5rem;
+    gap: 1rem;
+    border-radius: 5px;
+}
+
+.registerPkey {
+    font-style: italic;
+    font-size: 0.8rem;
+}
+
+.buttonGroupRegister {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.buttonGroupRegister button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--primary-white);
+}
+
+.copyBTN {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.copyBTN:active {
+    opacity: 0.8;
+}

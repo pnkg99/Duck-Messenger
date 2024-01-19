@@ -1,0 +1,33 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root{
+  --primary-dark: yellow; 
+  --secondary-dark: #0084FF;
+  --primary-gray: #FF2D55;
+  --secondary: #333333;
+  --primary-white:#fff;
+}
+@font-face {
+  font-family: 'Monserat';
+  src: url('./fonts/Montserrat-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+html{
+  color: black
+}
+body{
+  font-family: 'Monserat';
+  background-color: var(--primary-dark);
+}
+
+#root {
+  height: 100vh;
+}
+
+#App {
+  height: 100%;
+}

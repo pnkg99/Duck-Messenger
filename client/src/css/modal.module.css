@@ -1,0 +1,114 @@
+.modalOverlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 1000; /* Ensure it's on top of other content */
+  }
+  
+  /* Modal Content */
+  .modalContent {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+  }
+  
+  /* Close Button */
+  .closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  /* Navigation Buttons */
+  .navigationButtons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .nextButton {
+    padding: 10px 20px;
+    background-color: yellow;/* Blue color, you can change it */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .prevButton:hover,
+  .nextButton:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  /* Additional styling for step content (you can customize) */
+  h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+  
+  /* Centered link (How duck works?) */
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #e7b305; /* Blue color, you can change it */
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  a:hover {
+    color: #c51b1b; /* Darker blue on hover */
+  }
+  
+  ul {
+    list-style: disc; /* Use bullets as list markers (can also use 'circle' or 'square') */
+    padding: 0; /* Remove default padding */
+    list-style: none;
+    margin: 16px 0; /* Add spacing around the list */
+  }
+  
+  /* Apply styles to list items */
+  li {
+    margin-bottom: 8px; /* Add spacing between list items */
+    padding-left: 20px; /* Indent list items */
+    position: relative; /* Position for custom bullet or icon */
+  
+  }
+  
+  /* Style for nested lists (if needed) */
+  ul ul {
+    margin-left: 20px; /* Indent nested lists */
+  }
+  
+  /* Style for links within list items (optional) */
+  li a {
+    text-decoration: none;
+    color: #007bff; /* Customize link color */
+    /* Add other link styles as needed */
+  }
+  
+  /* Style for hover effect on list items (optional) */
+  li:hover {
+    background-color: #f5f5f5; /* Customize the background color on hover */
+    /* Add other hover styles as needed */
+  }

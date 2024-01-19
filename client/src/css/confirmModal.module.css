@@ -1,0 +1,31 @@
+.confirmModalContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-items: start;
+    background-color: var(--primary-dark);
+    color: var(--primary-white);
+    padding: 5rem;
+    gap: 2rem;
+    border-radius: 5px;
+
+}
+
+.confirmModalBTNGroup {
+    display: flex;
+    gap: 3rem;
+}
+
+.confirmModalBTNGroup button {
+    padding: 1rem 2rem;
+    background-color: transparent;
+    border: none;
+    color: var(--primary-white);
+    cursor: pointer;
+    
+}
+
+.confirmModalBTNGroup button:hover {
+    opacity: 0.9;
+}
