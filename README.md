@@ -36,20 +36,20 @@ Duck Messenger koristi blockchain tehnologiju za upravljanje korisničkim nalozi
 
 Da biste pokrenuli Duck Messenger aplikaciju, ispratite sledeće korake:
 
-    Klonirajte repozitorijum na vaš lokalni računar.
+Klonirajte repozitorijum na vaš lokalni računar.
 
-    Instalirajte potrebne dependencije. recommended : node v18.16.0, npm 9.6.4
-     `npm install` i u client folderu isto to.
+Instalirajte potrebne dependencije. recommended : node v18.16.0, npm 9.6.4
+`npm install` i u client folderu isto to.
 
-    Postavite svoj Inery Testnet node ili koristite neki od javno dostupnih API nodova
+Postavite svoj Inery Testnet node ili koristite neki od javno dostupnih API nodova
 
 - https:://tas.blockchain-servers.world.
 
-  Konfigurišite svoj Duck Messenger nalog sa imenom nalogai njegovim privatnim ključem.
+Konfigurišite svoj Duck Messenger nalog sa imenom nalogai njegovim privatnim ključem.
 
-  (note) (5KHyCYKSH32vmgT4qEtsMmtYEokBjFVaLDdeck3Y6BZAqERkTf5)
+(note) (5KHyCYKSH32vmgT4qEtsMmtYEokBjFVaLDdeck3Y6BZAqERkTf5)
 
-  Počnite sa sigurnom i privatnom razmenom poruka sa vašim kontaktima!
+Počnite sa sigurnom i privatnom razmenom poruka sa vašim kontaktima!
 
 ## Zaključak
 
