@@ -24,6 +24,15 @@ function ChatBox() {
   const messageListRef = useRef(null);
   const MAX_CHAR = 300;
 
+  useEffect(() => {
+    if (!selectedUser) {
+      return;
+    }
+    if (messageListRef.current) {
+      messageListRef.current.scrollTop = messageListRef.current.scrollHeight;
+    }
+  }, [messageHistoryDecr]);
+
   async function decryptMessageHistory() {
     try {
       const decryptedData = await decryptMessages(messageHistory, aes);
@@ -48,8 +57,8 @@ function ChatBox() {
         setAes(res.key);
       } else {
         if (res.msg.code == "ERR_OSSL_UNSUPPORTED") {
-          console.log(rsa_private);
-          toast.error("Wrong rsa private format");
+          //toast.error("Wrong rsa private format");
+          return;
         } else {
           toast.error("Failed to obtain aes key");
         }
@@ -61,30 +70,48 @@ function ChatBox() {
 
   useEffect(() => {
     if (!selectedUser) return;
-    setMessagesHistory(userData.serverURL, userData.accName, selectedUser);
-    if (messageListRef.current) {
-      messageListRef.current.scrollTop = messageListRef.current.scrollHeight;
-    }
-    if (rsa_private) {
-      setAesAsync(
+
+    const fetchData = async () => {
+      // Fetch new messages and update message history
+      await setMessagesHistory(
         userData.serverURL,
         userData.accName,
-        selectedUser,
-        rsa_private
+        selectedUser
       );
-    }
-    if (encryption) {
-      if (!rsa_private) {
-        toast.error("Provide rsa_private to use encrypted communication");
-        return;
+
+      if (rsa_private) {
+        await setAesAsync(
+          userData.serverURL,
+          userData.accName,
+          selectedUser,
+          rsa_private
+        );
       }
-    }
-    setToEncrypt(true);
-  }, [selectedUser]); // Get messages for selectedUser
+      if (encryption) {
+        if (!rsa_private) {
+          toast.error("Provide rsa_private to use encrypted communication");
+          return;
+        }
+      }
+      setToEncrypt(true);
+
+      // Scroll to the bottom of the message list
+      if (messageListRef.current) {
+        messageListRef.current.scrollTop = messageListRef.current.scrollHeight;
+      }
+    };
+
+    // Call fetchData immediately and then every 5 seconds
+    fetchData();
+    const intervalId = setInterval(fetchData, 5000);
+
+    // Clean up the interval when the component unmounts
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, [selectedUser]);
 
   useEffect(() => {
-    if (!encryption) return;
-    if (!toEncrypt) return;
     if (!messageHistory) return;
     decryptMessageHistory();
     setToEncrypt(false);
@@ -94,6 +121,7 @@ function ChatBox() {
     setSearchParams((prev) => {
       prev.delete("selectedUser");
       setMessageHistory([]);
+      setMessageHistoryDecr([]);
       return prev;
     });
   };
@@ -126,6 +154,7 @@ function ChatBox() {
         );
       } catch (e) {
         console.log(e);
+        return;
       }
     }
 
@@ -141,16 +170,20 @@ function ChatBox() {
     );
     if (result.status) {
       toast.success(result.msg);
+      console.log(encyptedMessage, 155);
+      setMessageHistory([...messageHistory, { msg: encyptedMessage }]);
       setUserInput("");
     } else {
       toast.error(result.msg);
     }
   };
+
   const handleEnter = (e) => {
     if (e.key === "Enter") {
       sendUserMSG();
     }
   };
+
   const generateMessages = (encryption, messageHistory, messageHistoryDecr) => {
     if (!encryption) {
       return messageHistory.map((msg, i) => {
@@ -171,9 +204,9 @@ function ChatBox() {
           <img src="./img/art-design_1774729.svg" alt="X" />
         </button>
       </header>
-      {!selectedUser && <img src="./img/duck_3940441.svg" />}
       <article className={styles.messageList} ref={messageListRef}>
-        {generateMessages(encryption, messageHistory, messageHistoryDecr)}
+        {messageHistory &&
+          generateMessages(encryption, messageHistory, messageHistoryDecr)}
       </article>
       {selectedUser && (
         <div className={styles.messageInputContainer}>

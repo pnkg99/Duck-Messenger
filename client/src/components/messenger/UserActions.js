@@ -33,13 +33,11 @@ function UserActions({
       const acceptRequestUrl = `/api/respRequest`;
       let res = await sendDataToServer(acceptRequestUrl, acceptRequestData);
       if (res === undefined) {
-        res = {};
+        res = { status: false, msg: "Some error." };
       }
-      console.log(res);
       return res;
     } catch (e) {
-      console.log(e);
-      return {};
+      return { status: false, msg: e };
     }
   }
 
@@ -73,9 +71,9 @@ function UserActions({
     );
   }
 
-  function acceptRequest() {
+  async function acceptRequest() {
     if (rsa_private) {
-      sendAcceptRequestAction(
+      const resp = await sendAcceptRequestAction(
         userData.serverURL,
         userData.accName,
         account,
@@ -83,6 +81,11 @@ function UserActions({
         true,
         userData.pkey
       );
+      if (resp.status) {
+        toast.success("Successfully added Contact");
+      } else {
+        toast.error("Adding contact failed.");
+      }
     } else {
       toast.error("Please import your private RSA to accept the request");
     }

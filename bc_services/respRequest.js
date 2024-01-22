@@ -3,7 +3,7 @@ const { asymetricEncryption } = require("../utils");
 const getProfile = require("./getProfile");
 
 async function respRequest(server, owner, account, rsa_private, accept, pkey) {
-  console.log(server, owner, account, rsa_private, accept, pkey);
+  //console.log(rsa_private.replace(/\\n/g, "\n"));
   try {
     let accountSignature = {};
     let rpc = new JsonRpc(server);
@@ -32,7 +32,7 @@ async function respRequest(server, owner, account, rsa_private, accept, pkey) {
     });
     const decryptedKey = asymetricEncryption.decrypt(
       user_request.rows[0].key,
-      rsa_private
+      rsa_private.replace(/\\n/g, "\n")
     );
     const user = await getProfile(server, account);
     const encryptedKey = asymetricEncryption.encrypt(

@@ -1,5 +1,5 @@
 .logoContainer {
-    color: var(--primary-white);
+    color: rgb(53, 52, 52);
 }
 
 .loginContainer {
@@ -25,13 +25,13 @@
     justify-content: center;
     align-items: center;
     gap: 3.5rem;
-    border-radius: 2.5rem;
-    background: #FF2D55;
+    border-radius: 15%;
+    background: #0084FF; 
     padding: 4rem;
 }
 
 .loginFormContent input[type=text] {
-    background-color: #0084FF;
+    background-color: #f7f7f78c;
     color: black;
     border: none;
     padding: 1rem;
@@ -60,7 +60,7 @@
     align-items: center;
     justify-content: center;
     background-color: var(--primary-dark);
-    color: var(--primary-white);
+    color: black;
     min-height: 50vh;
     padding: 5rem;
     gap: 1rem;
@@ -83,7 +83,7 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
-    color: var(--primary-white);
+    color: black;
 }
 
 .copyBTN {

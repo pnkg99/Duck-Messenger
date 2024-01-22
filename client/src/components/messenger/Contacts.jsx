@@ -36,7 +36,6 @@ function Contacts() {
   async function setProfileAsync() {
     try {
       const profile = await getProfile(userData.serverURL, userData.accName);
-      console.log(profile, "39");
       setRequestInfo(profile.data.requests);
       setContactsInfo(profile.data.contacts);
     } catch (e) {
@@ -144,7 +143,7 @@ function Contacts() {
         {addContact && !showRequests && (
           <AddContact onAddFriend={onAddFriend} />
         )}
-        {!addContact && (
+        {/* {!addContact && (
           <div className={styles.searchContainer}>
             <input
               className={styles.searchFieldContact}
@@ -157,7 +156,7 @@ function Contacts() {
               <img src="./img/search.svg" alt="search" />{" "}
             </button>
           </div>
-        )}
+        )} */}
       </div>
       <ul className={styles.userList}>{showUsers()}</ul>
     </div>

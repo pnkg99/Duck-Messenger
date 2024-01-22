@@ -1,7 +1,7 @@
 {
   "name": "outoftime",
   "version": "1.0.0",
-  "description": "Decentralized Messaging App",
+  "description": "Decentralized Communication Application",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon server.js"
